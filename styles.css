@@ -1,0 +1,170 @@
+a{
+    color: black;
+    text-decoration: none;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background: #f5f7fb;
+    color: #1f2937;
+}
+
+h1, h2, h3{
+    margin-top: 0;
+}
+
+#login{
+    background-color: rgb(110, 123, 224);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.251);
+}
+#links{
+    align-items: left;
+    background-color: rgb(110, 123, 224);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.251);
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+}
+#links a{
+    display: inline-block;
+    margin: 4px 6px;
+    padding: 4px 6px;
+    border-radius: 4px;
+}
+#links a:hover{
+    background: rgba(255, 255, 255, 0.35);
+}
+
+main{
+    background-color: rgba(105, 119, 221, 0.407);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.251);
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+main p{
+    margin-bottom: 16px;
+}
+
+main ul{
+    padding-left: 22px;
+    margin-top: 8px;
+    margin-bottom: 16px;
+}
+
+main form{
+    margin: 16px 0 24px;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.45);
+    border-radius: 6px;
+}
+
+main label{
+    font-weight: bold;
+}
+
+main input{
+    width: 100%;
+    max-width: 360px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 12px;
+    padding: 10px 12px;
+    border: 1px solid rgba(31, 41, 55, 0.2);
+    border-radius: 4px;
+    font: inherit;
+}
+
+main button{
+    display: inline-block;
+    padding: 10px 16px;
+    border: 0;
+    border-radius: 4px;
+    background: rgb(110, 123, 224);
+    color: white;
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+main button:hover{
+    background: rgb(88, 100, 198);
+}
+
+main nav a{
+    margin-top: 12px;
+}
+
+main li{
+    margin-bottom: 8px;
+}
+
+main a{
+    display: inline-block;
+    margin-top: 8px;
+    padding: 8px 12px;
+    background: rgb(110, 123, 224);
+    color: white;
+    border-radius: 4px;
+}
+
+main a:hover{
+    background: rgb(88, 100, 198);
+}
+
+.header h1{
+    margin-bottom: 0;
+}
+
+hr{
+    border: 0;
+    border-top: 1px solid rgba(31, 41, 55, 0.15);
+    margin: 20px 0;
+}
+
+.header{
+    background-color: rgb(110, 123, 224);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.251);
+}
+footer{
+    max-height: 100px;
+    color: black;
+    background-color: rgb(110, 123, 224);
+}
+.indexnav{
+    align-items: center;
+    background-color: rgb(110, 123, 224);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.251);
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+}
+
+.indexnav a{
+    display: inline-block;
+    margin: 4px 6px;
+    padding: 4px 6px;
+    border-radius: 4px;
+}
+
+.indexnav a:hover{
+    background: rgba(255, 255, 255, 0.35);
+}
+
