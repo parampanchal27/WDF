@@ -1,30 +1,348 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <link rel="stylesheet" href="styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile Page</title>
+    <title>My Profile - StudentHub</title>
 </head>
 <body>
     <header class="header">
-        <h1 align="center">This is profile page</h1>
+        <h1 align="center">StudentHub Portal</h1>
+        <nav class="indexnav">
+            <a href="Index.html">Home</a> |
+            <a href="coursedetails.html">Courses</a> |
+            <a href="mycourses.html">My Courses</a> |
+            <a href="assignments.html">Assignments</a> |
+            <a href="grades.html">Grades</a> |
+            <a href="schedule.html">Schedule</a> |
+            <a href="announcement.html">Announcements</a> |
+            <a href="calender.html">Calendar</a> |
+            <a href="profile.html">Profile</a> |
+            <a href="login.html">Login</a>
+        </nav>
     </header>
 
+    <hr>
+
     <main>
-        <h2>About Me</h2>
-        <p>Hello, I am a student learning web development. This profile page is a simple example of how to present personal information on a webpage.</p>
+        <div class="profile-header">
+            <div class="profile-avatar">👨‍🎓</div>
+            <div class="profile-name">Param Panchal</div>
+            <div class="profile-status">Student ID: STU2024001 | 3rd Semester | Active</div>
+        </div>
 
-        <h2>Details</h2>
-        <ul>
-            <li>Name: Your Name</li>
-            <li>Course: Web Development</li>
-            <li>Interest: HTML, CSS, and JavaScript</li>
-        </ul>
+        <!-- Personal Information Section -->
+        <div class="two-column">
+            <div class="profile-section">
+                <h3>📋 Personal Information</h3>
+                <div class="profile-info-row">
+                    <span class="profile-label">Full Name:</span>
+                    <span class="profile-value">Param Panchal</span>
+                </div>
+                <div class="profile-info-row">
+                    <span class="profile-label">Email:</span>
+                    <span class="profile-value">param.panchal@studenthub.edu</span>
+                </div>
+                <div class="profile-info-row">
+                    <span class="profile-label">Phone:</span>
+                    <span class="profile-value">+91 98765 43210</span>
+                </div>
+                <div class="profile-info-row">
+                    <span class="profile-label">Enrollment Date:</span>
+                    <span class="profile-value">January 15, 2025</span>
+                </div>
+                <div class="profile-info-row">
+                    <span class="profile-label">Date of Birth:</span>
+                    <span class="profile-value">May 10, 2004</span>
+                </div>
+            </div>
 
-        <h2>Goals</h2>
-        <p>I want to improve my coding skills, build better websites, and create useful projects.</p>
-        <a href="Index.html">Back to home</a>
+            <!-- Academic Information Section -->
+            <div class="profile-section">
+                <h3>📊 Academic Information</h3>
+                <div class="profile-info-row">
+                    <span class="profile-label">Current GPA:</span>
+                    <span class="profile-value profile-value-green">8.5 / 10.0</span>
+                </div>
+                <div class="profile-info-row">
+                    <span class="profile-label">Credits Enrolled:</span>
+                    <span class="profile-value">21 / 120</span>
+                </div>
+                <div class="profile-info-row">
+                    <span class="profile-label">Courses Enrolled:</span>
+                    <span class="profile-value">6</span>
+                </div>
+                <div class="profile-info-row">
+                    <span class="profile-label">Current Semester:</span>
+                    <span class="profile-value">3rd Semester</span>
+                </div>
+                <div class="profile-info-row">
+                    <span class="profile-label">Academic Status:</span>
+                    <span class="profile-value profile-value-green">✓ Good Standing</span>
+                </div>
+                <div class="profile-info-row">
+                    <span class="profile-label">Major:</span>
+                    <span class="profile-value">Computer Science</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills & Interests Section -->
+        <div class="profile-section">
+            <h3>🎯 Skills & Interests</h3>
+            <p class="profile-section-text"><strong>Technical Skills:</strong></p>
+            <div class="skills-list">
+                <span class="skill-tag">HTML</span>
+                <span class="skill-tag">CSS</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">Java</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">C++</span>
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">Linux</span>
+                <span class="skill-tag">Database Design</span>
+            </div>
+            <p class="profile-section-text" style="margin-top: 15px;"><strong>Areas of Interest:</strong></p>
+            <p class="profile-section-paragraph">Web Development, Full-Stack Development, Open-Source Contribution, Mobile Application Development</p>
+            <p class="profile-section-text" style="margin-top: 15px;"><strong>Career Goals:</strong></p>
+            <p class="profile-section-paragraph">Aspiring to become a full-stack developer and contribute to innovative software projects that solve real-world problems.</p>
+        </div>
+
+        <!-- Academic Summary Section -->
+        <div class="two-column">
+            <div class="profile-section">
+                <h3>📈 Assignment Status</h3>
+                <div class="profile-info-row">
+                    <span class="profile-label">Total:</span>
+                    <span class="profile-value">8 assignments</span>
+                </div>
+                <div class="profile-info-row">
+                    <span class="profile-label">Completed:</span>
+                    <span class="profile-value profile-value-green">2 ✓</span>
+                </div>
+                <div class="profile-info-row">
+                    <span class="profile-label">In Progress:</span>
+                    <span class="profile-value profile-value-orange">4</span>
+                </div>
+                <div class="profile-info-row">
+                    <span class="profile-label">Pending:</span>
+                    <span class="profile-value profile-value-red">3 ⚠️</span>
+                </div>
+                <div class="profile-info-row">
+                    <span class="profile-label">Average Score:</span>
+                    <span class="profile-value profile-value-green">91%</span>
+                </div>
+            </div>
+
+            <div class="profile-section">
+                <h3>📚 Course Performance</h3>
+                <div class="profile-info-row">
+                    <span class="profile-label">Best Course:</span>
+                    <span class="profile-value">DSA (90%)</span>
+                </div>
+                <div class="profile-info-row">
+                    <span class="profile-label">Web Dev:</span>
+                    <span class="profile-value profile-value-green">A- (85%)</span>
+                </div>
+                <div class="profile-info-row">
+                    <span class="profile-label">Database:</span>
+                    <span class="profile-value profile-value-blue">B+ (82%)</span>
+                </div>
+                <div class="profile-info-row">
+                    <span class="profile-label">OS:</span>
+                    <span class="profile-value profile-value-green">A (88%)</span>
+                </div>
+                <div class="profile-info-row">
+                    <span class="profile-label">Algorithms:</span>
+                    <span class="profile-value profile-value-green">A (90%)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+            <button class="btn btn-primary">✏️ Edit Profile</button>
+            <button class="btn btn-secondary">⚙️ Settings</button>
+            <button class="btn btn-secondary">📄 Download Transcript</button>
+            <button class="btn btn-danger">🚪 Logout</button>
+        </div>
     </main>
+
+    <hr>
+    <footer>
+        <p>&copy; 2026 StudentHub Portal. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+<body>
+    <header class="header">
+        <h1 align="center">StudentHub Portal</h1>
+        <nav class="indexnav">
+            <a href="Index.html">Home</a> |
+            <a href="coursedetails.html">Courses</a> |
+            <a href="mycourses.html">My Courses</a> |
+            <a href="assignments.html">Assignments</a> |
+            <a href="grades.html">Grades</a> |
+            <a href="schedule.html">Schedule</a> |
+            <a href="announcement.html">Announcements</a> |
+            <a href="calender.html">Calendar</a> |
+            <a href="profile.html">Profile</a> |
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+
+    <hr>
+
+    <main>
+        <div class="profile-header">
+            <div class="profile-avatar">👨‍🎓</div>
+            <div class="profile-name">Param Panchal</div>
+            <div class="profile-status">Student ID: STU2024001 | 3rd Semester | Active</div>
+        </div>
+
+        <!-- Personal Information Section -->
+        <div class="two-column">
+            <div class="profile-section">
+                <h3>📋 Personal Information</h3>
+                <div class="profile-info-row">
+                    <span class="profile-label">Full Name:</span>
+                    <span class="profile-value">Param Panchal</span>
+                </div>
+                <div class="profile-info-row">
+                    <span class="profile-label">Email:</span>
+                    <span class="profile-value">param.panchal@studenthub.edu</span>
+                </div>
+                <div class="profile-info-row">
+                    <span class="profile-label">Phone:</span>
+                    <span class="profile-value">+91 98765 43210</span>
+                </div>
+                <div class="profile-info-row">
+                    <span class="profile-label">Enrollment Date:</span>
+                    <span class="profile-value">January 15, 2025</span>
+                </div>
+                <div class="profile-info-row">
+                    <span class="profile-label">Date of Birth:</span>
+                    <span class="profile-value">May 10, 2004</span>
+                </div>
+            </div>
+
+            <!-- Academic Information Section -->
+            <div class="profile-section">
+                <h3>📊 Academic Information</h3>
+                <div class="profile-info-row">
+                    <span class="profile-label">Current GPA:</span>
+                    <span class="profile-value" style="color: #10b981; font-weight: bold;">8.5 / 10.0</span>
+                </div>
+                <div class="profile-info-row">
+                    <span class="profile-label">Credits Enrolled:</span>
+                    <span class="profile-value">21 / 120</span>
+                </div>
+                <div class="profile-info-row">
+                    <span class="profile-label">Courses Enrolled:</span>
+                    <span class="profile-value">6</span>
+                </div>
+                <div class="profile-info-row">
+                    <span class="profile-label">Current Semester:</span>
+                    <span class="profile-value">3rd Semester</span>
+                </div>
+                <div class="profile-info-row">
+                    <span class="profile-label">Academic Status:</span>
+                    <span class="profile-value" style="color: #10b981; font-weight: bold;">✓ Good Standing</span>
+                </div>
+                <div class="profile-info-row">
+                    <span class="profile-label">Major:</span>
+                    <span class="profile-value">Computer Science</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills & Interests Section -->
+        <div class="profile-section">
+            <h3>🎯 Skills & Interests</h3>
+            <p style="margin-top: 0; color: #666; font-size: 14px;"><strong>Technical Skills:</strong></p>
+            <div class="skills-list">
+                <span class="skill-tag">HTML</span>
+                <span class="skill-tag">CSS</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">Java</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">C++</span>
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">Linux</span>
+                <span class="skill-tag">Database Design</span>
+            </div>
+            <p style="margin-top: 15px; margin-bottom: 0; color: #666; font-size: 14px;"><strong>Areas of Interest:</strong></p>
+            <p style="color: #666;">Web Development, Full-Stack Development, Open-Source Contribution, Mobile Application Development</p>
+            <p style="margin-top: 15px; margin-bottom: 0; color: #666; font-size: 14px;"><strong>Career Goals:</strong></p>
+            <p style="color: #666;">Aspiring to become a full-stack developer and contribute to innovative software projects that solve real-world problems.</p>
+        </div>
+
+        <!-- Academic Summary Section -->
+        <div class="two-column">
+            <div class="profile-section">
+                <h3>📈 Assignment Status</h3>
+                <div class="profile-info-row">
+                    <span class="profile-label">Total:</span>
+                    <span class="profile-value">8 assignments</span>
+                </div>
+                <div class="profile-info-row">
+                    <span class="profile-label">Completed:</span>
+                    <span class="profile-value" style="color: #10b981;">2 ✓</span>
+                </div>
+                <div class="profile-info-row">
+                    <span class="profile-label">In Progress:</span>
+                    <span class="profile-value" style="color: #d97706;">4</span>
+                </div>
+                <div class="profile-info-row">
+                    <span class="profile-label">Pending:</span>
+                    <span class="profile-value" style="color: #ef4444;">3 ⚠️</span>
+                </div>
+                <div class="profile-info-row">
+                    <span class="profile-label">Average Score:</span>
+                    <span class="profile-value" style="color: #10b981; font-weight: bold;">91%</span>
+                </div>
+            </div>
+
+            <div class="profile-section">
+                <h3>📚 Course Performance</h3>
+                <div class="profile-info-row">
+                    <span class="profile-label">Best Course:</span>
+                    <span class="profile-value">DSA (90%)</span>
+                </div>
+                <div class="profile-info-row">
+                    <span class="profile-label">Web Dev:</span>
+                    <span class="profile-value" style="color: #10b981;">A- (85%)</span>
+                </div>
+                <div class="profile-info-row">
+                    <span class="profile-label">Database:</span>
+                    <span class="profile-value" style="color: #3b82f6;">B+ (82%)</span>
+                </div>
+                <div class="profile-info-row">
+                    <span class="profile-label">OS:</span>
+                    <span class="profile-value" style="color: #10b981;">A (88%)</span>
+                </div>
+                <div class="profile-info-row">
+                    <span class="profile-label">Algorithms:</span>
+                    <span class="profile-value" style="color: #10b981;">A (90%)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+            <button class="btn btn-primary">✏️ Edit Profile</button>
+            <button class="btn btn-secondary">⚙️ Settings</button>
+            <button class="btn btn-secondary">📄 Download Transcript</button>
+            <button class="btn btn-danger">🚪 Logout</button>
+        </div>
+    </main>
+
+    <hr>
+    <footer>
+        <p>&copy; 2026 StudentHub Portal. All rights reserved.</p>
+    </footer>
 </body>
 </html>

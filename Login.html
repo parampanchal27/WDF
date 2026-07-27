@@ -16,7 +16,7 @@
             <a href="assignments.html">Assignments</a> |
             <a href="grades.html">Grades</a> |
             <a href="schedule.html">Schedule</a> |
-            <a href="announcements.html">Announcements</a> |
+            <a href="announcement.html">Announcements</a> |
             <a href="calender.html">Calendar</a> |
             <a href="profile.html">Profile</a> |
             <a href="login.html">Login</a>
@@ -25,23 +25,44 @@
     <hr>
 
     <main>
-        <h2>Login to Your Account</h2>
-        <form action="#" method="POST">
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email" required><br><br>
-            
-            <label for="password">Password:</label><br>
-            <input type="password" id="password" name="password" required><br><br>
-            
-            <button type="submit">Login</button>
-            <nav>
-            <a href="forgot_password.html">Forgot Password?</a>
-            <a href="register.html">Register</a>
-            </nav>
-            </form>
+        <div class="login-container">
+            <div class="login-card">
+                <h2>Welcome Back!</h2>
+                <p>Login to your StudentHub account</p>
 
-        <hr>
-        </form>
+                <form action="#" method="POST">
+                    <div class="login-form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+
+                    <div class="login-form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                    </div>
+
+                    <div class="login-form-remember">
+                        <label>
+                            <input type="checkbox" name="remember">
+                            Remember me
+                        </label>
+                        <a href="#" class="login-forgot-link">Forgot Password?</a>
+                    </div>
+
+                    <button type="submit" class="login-btn">Login</button>
+                </form>
+
+                <hr class="login-divider">
+
+                <p class="login-register-text">
+                    Don't have an account? <a href="register.html" class="login-register-link">Register here</a>
+                </p>
+            </div>
+
+            <p class="login-footer">
+                StudentHub © 2026. All rights reserved.
+            </p>
+        </div>
     </main>
 
     <hr>
