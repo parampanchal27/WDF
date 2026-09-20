@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - StudentHub</title>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="header">
+        <h1>StudentHub Portal</h1>
+        <button id="themeToggle" class="theme-toggle" type="button" aria-label="Switch theme">🌙 Dark Mode</button>
+        <nav class="indexnav" aria-label="Primary navigation">
+            <a href="index.html">Home</a>
+            <a href="coursedetails.html">Courses</a>
+            <a href="mycourses.html">My Courses</a>
+            <a href="assignments.html">Assignments</a>
+            <a href="grades.html">Grades</a>
+            <a href="schedule.html">Schedule</a>
+            <a href="announcement.html">Announcements</a>
+            <a href="calendar.html">Calendar</a>
+            <a href="profile.html">Profile</a>
+            <a href="faq.html" aria-current="page">FAQ</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+        <h2>Frequently Asked Questions</h2>
+        <p>Expand a question to view its answer.</p>
+        <section class="faq-list" aria-label="Frequently asked questions">
+            <article class="faq-item">
+                <h3><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-1">How do I view my enrolled courses?</button></h3>
+                <div class="faq-answer" id="faq-answer-1" hidden>Open My Courses from the navigation menu to see course codes, instructors, schedules, credits, and grades.</div>
+            </article>
+            <article class="faq-item">
+                <h3><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-2">Where can I find upcoming deadlines?</button></h3>
+                <div class="faq-answer" id="faq-answer-2" hidden>Use the Assignments and Calendar pages to review submission dates and important academic events.</div>
+            </article>
+            <article class="faq-item">
+                <h3><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-3">How do I change the theme?</button></h3>
+                <div class="faq-answer" id="faq-answer-3" hidden>Use the theme button in the header. Your preference is saved in localStorage and restored on the next page visit.</div>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 StudentHub Portal. All rights reserved.</p>
+    </footer>
+    <script src="script.js?v=4"></script>
+</body>
+</html>

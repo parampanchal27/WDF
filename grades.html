@@ -7,9 +7,11 @@
     <title>Grades</title>
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <header class="header">
-        <h1 align="center">StudentHub Portal</h1>
-        <nav class="indexnav">
+        <h1>StudentHub Portal</h1>
+        <button id="themeToggle" class="theme-toggle" type="button" aria-label="Switch theme">🌙 Dark Mode</button>
+        <nav class="indexnav" aria-label="Primary navigation">
             <a href="index.html">Home</a> | 
             <a href="coursedetails.html">Courses</a> | 
             <a href="mycourses.html">My Courses</a> | 
@@ -24,9 +26,9 @@
         </nav>
     </header>
     <hr>
-    <h1 align="center">Grades Page</h1>
+    <h1>Grades Page</h1>
 
-    <main>
+    <main id="main-content" tabindex="-1">
         <h2>Semester Grade Summary</h2>
         <p>Below is your current performance overview for the ongoing semester.</p>
 
@@ -52,5 +54,6 @@
 
         <p><a href="Index.html">Back to home</a></p>
     </main>
+    <script src="script.js?v=4"></script>
 </body>
 </html>

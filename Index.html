@@ -7,9 +7,11 @@
     <title>StudentHub - Home</title>
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <header class="header">
-        <h1 align="center">StudentHub Portal</h1>
-        <nav class="indexnav">
+        <h1>StudentHub Portal</h1>
+        <button id="themeToggle" class="theme-toggle" type="button" aria-label="Switch theme">🌙 Dark Mode</button>
+        <nav class="indexnav" aria-label="Primary navigation">
             <a href="index.html">Home</a> | 
             <a href="coursedetails.html">Courses</a> | 
             <a href="mycourses.html">My Courses</a> | 
@@ -25,27 +27,64 @@
     </header>
     <hr>
 
-    <main>
-        <h2>Welcome to StudentHub!</h2>
-        <p>Your one-stop destination for all academic needs.</p>
-        
-        <h3>Quick Overview</h3>
-        <ul>
-            <li><strong>Courses:</strong> 6 Enrolled</li>
-            <li><strong>Pending Assignments:</strong> 3 Due soon</li>
-            <li><strong>Current GPA:</strong> 8.5</li>
-        </ul>
+    <main id="main-content" tabindex="-1">
+        <div class="notification-banner" id="welcomeNotice" role="status">
+            <span><strong>Welcome to StudentHub.</strong> Your semester dashboard is ready.</span>
+            <button type="button" data-dismiss="welcomeNotice" aria-label="Dismiss welcome notice">×</button>
+        </div>
 
-        <h3>Recent Announcements</h3>
-        <ul>
-            <li>Mid-term exam schedule released. <a href="announcement.html">View all</a></li>
-            <li>Library timings updated for exam week.</li>
-        </ul>
+        <section class="dashboard-hero">
+            <div>
+                <h2>Welcome back, Param</h2>
+                <p>Here is your academic overview for the current semester.</p>
+            </div>
+            <span class="date-label">Spring 2025 · 3rd Semester</span>
+        </section>
+
+        <section class="overview-grid" aria-label="Quick overview">
+            <article class="overview-card"><p>Enrolled courses</p><div class="metric">6</div><p>Across your current semester</p></article>
+            <article class="overview-card"><p>Pending assignments</p><div class="metric">3</div><p>Due soon</p></article>
+            <article class="overview-card"><p>Current GPA</p><div class="metric">8.5</div><p>Out of 10.0</p></article>
+        </section>
+
+        <div class="section-heading"><h3>Your courses</h3><a href="mycourses.html">See all courses</a></div>
+        <section class="course-grid" aria-label="Enrolled courses">
+            <article class="course-card"><div class="course-art blue"></div><div class="course-card-body"><span class="pill">WDF-301 · 4 credits</span><h4>Web Development Fundamentals</h4><div class="course-meta"><span>Spring 2025</span><a href="coursedetails.html">Open</a></div></div></article>
+            <article class="course-card"><div class="course-art green"></div><div class="course-card-body"><span class="pill">DBMS-201 · 3 credits</span><h4>Database Management Systems</h4><div class="course-meta"><span>Spring 2025</span><a href="coursedetails.html">Open</a></div></div></article>
+            <article class="course-card"><div class="course-art lilac"></div><div class="course-card-body"><span class="pill">OS-301 · 4 credits</span><h4>Operating Systems</h4><div class="course-meta"><span>Spring 2025</span><a href="coursedetails.html">Open</a></div></div></article>
+            <article class="course-card"><div class="course-art peach"></div><div class="course-card-body"><span class="pill">DSA-201 · 4 credits</span><h4>Data Structures and Algorithms</h4><div class="course-meta"><span>Spring 2025</span><a href="coursedetails.html">Open</a></div></div></article>
+        </section>
+
+        <div class="section-heading"><h3>Recent announcements</h3><a href="announcement.html">View all</a></div>
+        <section class="announcement-list" aria-label="Recent announcements">
+            <ul><li><strong>Mid-term exam schedule released</strong><br><span>Timetable for all departments is now available.</span></li></ul>
+            <ul><li><strong>Library timings updated</strong><br><span>Library stays open from 8:00 AM to 10:00 PM during exam week.</span></li></ul>
+        </section>
+
+        <section class="interactive-tools" aria-labelledby="tools-heading">
+            <div class="section-heading"><h3 id="tools-heading">Quick resources</h3></div>
+            <div class="content-slider" aria-live="polite">
+                <article class="slide"><strong>Study tip</strong><p>Review your assignment deadlines before planning your weekly schedule.</p></article>
+                <article class="slide" hidden><strong>Campus reminder</strong><p>Check announcements regularly for timetable and lab updates.</p></article>
+                <article class="slide" hidden><strong>Academic support</strong><p>Visit your profile to review progress, GPA, and course performance.</p></article>
+                <div class="slider-controls"><button class="slider-prev" type="button" aria-label="Previous resource">←</button><button class="slider-next" type="button" aria-label="Next resource">→</button></div>
+            </div>
+            <button class="resource-button" type="button" data-modal-open="resourceModal">View dashboard help</button>
+        </section>
+
+        <div class="modal" id="resourceModal" role="dialog" aria-modal="true" aria-labelledby="resourceModalTitle" hidden>
+            <div class="modal-content">
+                <button class="modal-close" type="button" data-modal-close aria-label="Close dashboard help">×</button>
+                <h3 id="resourceModalTitle">Dashboard help</h3>
+                <p>Use the navigation to open your courses, assignments, grades, schedule, announcements, calendar, or profile.</p>
+            </div>
+        </div>
     </main>
 
     <hr>
     <footer>
         <p>&copy; 2026 StudentHub Portal. All rights reserved.</p>
     </footer>
+    <script src="script.js?v=4"></script>
 </body>
 </html>

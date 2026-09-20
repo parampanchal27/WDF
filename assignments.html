@@ -7,9 +7,11 @@
     <title>Assignments - StudentHub</title>
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <header class="header">
-        <h1 align="center">StudentHub Portal</h1>
-        <nav class="indexnav">
+        <h1>StudentHub Portal</h1>
+        <button id="themeToggle" class="theme-toggle" type="button" aria-label="Switch theme">🌙 Dark Mode</button>
+        <nav class="indexnav" aria-label="Primary navigation">
             <a href="Index.html">Home</a> |
             <a href="coursedetails.html">Courses</a> |
             <a href="mycourses.html">My Courses</a> |
@@ -25,7 +27,7 @@
 
     <hr>
 
-    <main>
+    <main id="main-content" tabindex="-1">
         <h2>Your Assignments</h2>
         <p>Below are all your current assignments organized by course. <strong>3 assignments are due this week.</strong></p>
 
@@ -143,5 +145,6 @@
     <footer>
         <p>&copy; 2026 StudentHub Portal. All rights reserved.</p>
     </footer>
+    <script src="script.js?v=4"></script>
 </body>
 </html>

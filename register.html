@@ -7,31 +7,94 @@
     <title>Register</title>
 </head>
 <body>
-    <main>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="header">
+        <h1>StudentHub Portal</h1>
+        <button id="themeToggle" class="theme-toggle" type="button" aria-label="Switch theme">🌙 Dark Mode</button>
+        <nav class="indexnav" aria-label="Primary navigation">
+            <a href="index.html">Home</a>
+            <a href="coursedetails.html">Courses</a>
+            <a href="mycourses.html">My Courses</a>
+            <a href="assignments.html">Assignments</a>
+            <a href="grades.html">Grades</a>
+            <a href="schedule.html">Schedule</a>
+            <a href="announcement.html">Announcements</a>
+            <a href="calendar.html">Calendar</a>
+            <a href="profile.html">Profile</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+    <main id="main-content" tabindex="-1">
         <h1 class="register">Register</h1>
         <form id="registerForm" action="#" method="POST" novalidate>
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username">
-            <small id="usernameError" class="error-message"></small><br><br>
+            <div class="registration-grid">
+                <div class="form-field">
+                    <label for="fullName">Full name</label>
+                    <input type="text" id="fullName" name="fullName" autocomplete="name" aria-describedby="fullNameError" required>
+                    <small id="fullNameError" class="error-message"></small>
+                </div>
+                <div class="form-field">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" autocomplete="username" aria-describedby="usernameError" required>
+                    <small id="usernameError" class="error-message"></small>
+                </div>
+                <div class="form-field">
+                    <label for="email">Email address</label>
+                    <input type="email" id="email" name="email" autocomplete="email" aria-describedby="emailError" required>
+                    <small id="emailError" class="error-message"></small>
+                </div>
+                <div class="form-field">
+                    <label for="mobile">Mobile number</label>
+                    <input type="tel" id="mobile" name="mobile" inputmode="tel" pattern="[0-9]{10}" placeholder="10 digit number" aria-describedby="mobileError" required>
+                    <small id="mobileError" class="error-message"></small>
+                </div>
+                <div class="form-field">
+                    <label for="course">Course</label>
+                    <select id="course" name="course" aria-describedby="courseError" required>
+                        <option value="">Select course</option>
+                        <option value="btech-it">B.Tech Information Technology</option>
+                        <option value="btech-cse">B.Tech Computer Science</option>
+                    </select>
+                    <small id="courseError" class="error-message"></small>
+                </div>
+                <div class="form-field">
+                    <label for="year">Year / semester</label>
+                    <select id="year" name="year" aria-describedby="yearError" required>
+                        <option value="">Select year</option>
+                        <option value="3rd-semester">3rd Semester</option>
+                        <option value="4th-semester">4th Semester</option>
+                    </select>
+                    <small id="yearError" class="error-message"></small>
+                </div>
+                <div class="form-field">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" autocomplete="new-password" aria-describedby="passwordHint passwordError" required>
+                    <small id="passwordHint" class="password-strength" aria-live="polite">Use 8+ characters with a number and symbol.</small>
+                    <small id="passwordError" class="error-message"></small>
+                </div>
+                <div class="form-field">
+                    <label for="confirmPassword">Confirm password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" autocomplete="new-password" aria-describedby="confirmPasswordError" required>
+                    <small id="confirmPasswordError" class="error-message"></small>
+                </div>
+            </div>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email">
-            <small id="emailError" class="error-message"></small><br><br>
+            <fieldset class="form-fieldset">
+                <legend>Gender</legend>
+                <label><input type="radio" name="gender" value="female" required> Female</label>
+                <label><input type="radio" name="gender" value="male"> Male</label>
+                <label><input type="radio" name="gender" value="other"> Other</label>
+                <small id="genderError" class="error-message"></small>
+            </fieldset>
 
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password">
-            <small id="passwordError" class="error-message"></small><br><br>
-
-            <label for="confirmPassword">Confirm Password:</label>
-            <input type="password" id="confirmPassword" name="confirmPassword">
-            <small id="confirmPasswordError" class="error-message"></small><br><br>
-
-            <input type="submit" value="Register">
+            <label class="terms-label"><input type="checkbox" id="terms" name="terms" aria-describedby="termsError" required> I agree to the StudentHub terms and conditions.</label>
+            <small id="termsError" class="error-message"></small>
+            <button type="submit" class="register-submit">Create account</button>
         </form>
         <p id="successMessage" class="success-message"></p>
         <p>Already have an account? <a href="login.html">Login here</a>.</p>
     </main>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=4"></script>
 </body>
 </html>

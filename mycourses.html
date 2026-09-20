@@ -7,9 +7,11 @@
     <title>My Courses - StudentHub</title>
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <header class="header">
-        <h1 align="center">StudentHub Portal</h1>
-        <nav class="indexnav">
+        <h1>StudentHub Portal</h1>
+        <button id="themeToggle" class="theme-toggle" type="button" aria-label="Switch theme">🌙 Dark Mode</button>
+        <nav class="indexnav" aria-label="Primary navigation">
             <a href="index.html">Home</a> | 
             <a href="coursedetails.html">Courses</a> | 
             <a href="mycourses.html">My Courses</a> | 
@@ -25,7 +27,7 @@
     </header>
     <hr>
 
-    <main>
+    <main id="main-content" tabindex="-1">
         <h2>My Enrolled Courses</h2>
         <p>You are currently enrolled in <strong>6 courses</strong>. Here are your course details:</p>
 
@@ -115,5 +117,6 @@
     <footer>
         <p>&copy; 2026 StudentHub Portal. All rights reserved.</p>
     </footer>
+    <script src="script.js?v=4"></script>
 </body>
 </html>
