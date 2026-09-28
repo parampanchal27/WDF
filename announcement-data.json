@@ -1,0 +1,46 @@
+{
+  "announcements": [
+    {
+      "id": 1,
+      "category": "Academic",
+      "title": "Mid-term Exam Schedule Released",
+      "date": "2026-08-10",
+      "details": "Timetable for all departments has been uploaded to the schedule portal. Please verify your exam slots."
+    },
+    {
+      "id": 2,
+      "category": "Academic",
+      "title": "Assignment Submission Deadline Extended",
+      "date": "2026-08-08",
+      "details": "Web Development assignment deadline is extended by 2 days due to portal maintenance."
+    },
+    {
+      "id": 3,
+      "category": "Academic",
+      "title": "Lab Session Rescheduled",
+      "date": "2026-08-06",
+      "details": "Database lab on Friday is moved to Saturday, 11:00 AM, Lab 3."
+    },
+    {
+      "id": 4,
+      "category": "Campus",
+      "title": "Library Timing Update",
+      "date": "2026-08-05",
+      "details": "Library will remain open from 8:00 AM to 10:00 PM during exam week."
+    },
+    {
+      "id": 5,
+      "category": "Campus",
+      "title": "Technical Fest Registration Open",
+      "date": "2026-08-04",
+      "details": "Team registrations are now open for coding challenge, poster design, and quiz events."
+    },
+    {
+      "id": 6,
+      "category": "Academic",
+      "title": "Scholarship Application Window Opens",
+      "date": "2026-08-02",
+      "details": "Students with strong academic performance can apply for merit-based scholarships before the end of the month."
+    }
+  ]
+}

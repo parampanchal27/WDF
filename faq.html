@@ -28,21 +28,41 @@
 
     <main id="main-content" tabindex="-1">
         <h2>Frequently Asked Questions</h2>
-        <p>Expand a question to view its answer.</p>
-        <section class="faq-list" aria-label="Frequently asked questions">
-            <article class="faq-item">
-                <h3><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-1">How do I view my enrolled courses?</button></h3>
-                <div class="faq-answer" id="faq-answer-1" hidden>Open My Courses from the navigation menu to see course codes, instructors, schedules, credits, and grades.</div>
-            </article>
-            <article class="faq-item">
-                <h3><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-2">Where can I find upcoming deadlines?</button></h3>
-                <div class="faq-answer" id="faq-answer-2" hidden>Use the Assignments and Calendar pages to review submission dates and important academic events.</div>
-            </article>
-            <article class="faq-item">
-                <h3><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-3">How do I change the theme?</button></h3>
-                <div class="faq-answer" id="faq-answer-3" hidden>Use the theme button in the header. Your preference is saved in localStorage and restored on the next page visit.</div>
-            </article>
+        <p>Search, filter, and browse frequently asked questions from the student portal.</p>
+
+        <section class="faq-controls" aria-label="FAQ controls">
+            <div class="faq-search-wrap">
+                <label class="faq-label" for="faqSearch">Search questions</label>
+                <input id="faqSearch" type="search" placeholder="Search FAQs..." aria-label="Search FAQ entries">
+            </div>
+
+            <div class="faq-filter-wrap">
+                <label class="faq-label" for="faqCategory">Filter by category</label>
+                <select id="faqCategory" aria-label="Filter FAQ by category">
+                    <option value="all">All categories</option>
+                </select>
+            </div>
+
+            <div class="faq-sort-wrap">
+                <label class="faq-label" for="faqSort">Sort by</label>
+                <select id="faqSort" aria-label="Sort FAQ entries">
+                    <option value="default">Default</option>
+                    <option value="question-asc">Question A-Z</option>
+                    <option value="question-desc">Question Z-A</option>
+                    <option value="category">Category</option>
+                </select>
+            </div>
         </section>
+
+        <div id="faqStatus" class="faq-status" aria-live="polite"></div>
+
+        <section id="faqList" class="faq-list" aria-live="polite" aria-label="Frequently asked questions"></section>
+
+        <nav class="faq-pagination" aria-label="FAQ pagination">
+            <button id="faqPrev" type="button">Previous</button>
+            <div id="faqPageInfo" class="faq-page-info" aria-live="polite">Page 1 of 1</div>
+            <button id="faqNext" type="button">Next</button>
+        </nav>
     </main>
 
     <footer>

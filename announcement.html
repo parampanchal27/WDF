@@ -32,38 +32,21 @@
         <h2>Latest Updates</h2>
         <p>Stay updated with important academic notices and campus information.</p>
 
-        <h3>Academic Announcements</h3>
-        <ul>
-            <li>
-                <strong>Mid-term Exam Schedule Released</strong><br>
-                Date: 10 Aug 2026<br>
-                Details: Timetable for all departments has been uploaded to the schedule portal. Please verify your exam slots.
-            </li>
-            <li>
-                <strong>Assignment Submission Deadline Extended</strong><br>
-                Date: 08 Aug 2026<br>
-                Details: Web Development assignment deadline is extended by 2 days due to portal maintenance.
-            </li>
-            <li>
-                <strong>Lab Session Rescheduled</strong><br>
-                Date: 06 Aug 2026<br>
-                Details: Database lab on Friday is moved to Saturday, 11:00 AM, Lab 3.
-            </li>
-        </ul>
+        <section class="data-controls" aria-label="Announcement controls">
+            <div class="data-search-wrap">
+                <label class="data-label" for="announcementSearch">Search announcements</label>
+                <input id="announcementSearch" type="search" placeholder="Search announcements..." aria-label="Search announcements">
+            </div>
+            <div class="data-filter-wrap">
+                <label class="data-label" for="announcementCategory">Filter by type</label>
+                <select id="announcementCategory" aria-label="Filter announcements by category">
+                    <option value="all">All</option>
+                </select>
+            </div>
+        </section>
 
-        <h3>Campus Announcements</h3>
-        <ul>
-            <li>
-                <strong>Library Timing Update</strong><br>
-                Date: 05 Aug 2026<br>
-                Details: Library will remain open from 8:00 AM to 10:00 PM during exam week.
-            </li>
-            <li>
-                <strong>Technical Fest Registration Open</strong><br>
-                Date: 04 Aug 2026<br>
-                Details: Team registrations are now open for coding challenge, poster design, and quiz events.
-            </li>
-        </ul>
+        <div id="announcementStatus" class="data-status" aria-live="polite"></div>
+        <section id="announcementList" class="data-list" aria-live="polite" aria-label="Announcements"></section>
     </main>
 
     <p><a href="Index.html">Back to home</a></p>

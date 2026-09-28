@@ -1,0 +1,100 @@
+{
+  "faqs": [
+    {
+      "id": 1,
+      "category": "General",
+      "question": "How do I view my enrolled courses?",
+      "answer": "Open the My Courses page from the main navigation to see your class list, instructor details, schedule, credits, and current grades."
+    },
+    {
+      "id": 2,
+      "category": "General",
+      "question": "Where can I find upcoming deadlines?",
+      "answer": "Use the Assignments page and the Calendar page to review submission dates, exam deadlines, and important academic events for the semester."
+    },
+    {
+      "id": 3,
+      "category": "Account",
+      "question": "How do I change the theme?",
+      "answer": "Use the theme toggle in the header. Your preference is saved in localStorage and restored the next time you visit the portal."
+    },
+    {
+      "id": 4,
+      "category": "Courses",
+      "question": "How can I access course materials?",
+      "answer": "From the Courses page, select a specific course and review resources, lecture notes, assignments, and grade updates shared by the instructor."
+    },
+    {
+      "id": 5,
+      "category": "Assignments",
+      "question": "When are assignment submissions due?",
+      "answer": "The submission deadlines are posted on the Assignment page, and the Calendar usually includes reminders for major due dates and review sessions."
+    },
+    {
+      "id": 6,
+      "category": "Grades",
+      "question": "Where can I see my latest grades?",
+      "answer": "Navigate to the Grades page, where your assessment results, cumulative GPA, and performance summary are presented in a student-friendly layout."
+    },
+    {
+      "id": 7,
+      "category": "Schedule",
+      "question": "How do I review my class timetable?",
+      "answer": "Visit the Schedule page to view your weekly class timetable, room assignments, and lecturer details for each subject."
+    },
+    {
+      "id": 8,
+      "category": "Technical",
+      "question": "Why is the portal not displaying updated information?",
+      "answer": "Refresh the page first. If the issue continues, confirm your internet connection and clear the browser cache to reload the latest portal data."
+    },
+    {
+      "id": 9,
+      "category": "Account",
+      "question": "Can I reset my password?",
+      "answer": "Yes. Use the Login page and select the password recovery option or contact the student support desk if you are unable to access your account."
+    },
+    {
+      "id": 10,
+      "category": "General",
+      "question": "How do I contact the student support team?",
+      "answer": "Support contacts are usually listed in the portal footer or on the Help page. You can also reach out using the contact information shown on the announcements board."
+    },
+    {
+      "id": 11,
+      "category": "Courses",
+      "question": "Can I change my registered electives?",
+      "answer": "Course changes are subject to departmental approval and timetable availability. Please check registration policy notices or speak with your academic advisor."
+    },
+    {
+      "id": 12,
+      "category": "Assignments",
+      "question": "What should I do if I miss a submission deadline?",
+      "answer": "Check whether the assignment supports late submission, then contact the course instructor immediately to discuss extensions or alternate arrangements."
+    },
+    {
+      "id": 13,
+      "category": "Technical",
+      "question": "Does the portal support mobile access?",
+      "answer": "Yes, the interface is designed to be responsive and works across desktop, tablet, and mobile browsers with a simplified navigation layout."
+    },
+    {
+      "id": 14,
+      "category": "General",
+      "question": "Where do I review announcements from the university?",
+      "answer": "The Announcements page contains academic updates, deadlines, event notices, and urgent messages shared by student services or faculty."
+    },
+    {
+      "id": 15,
+      "category": "Account",
+      "question": "Is my data protected while using the portal?",
+      "answer": "The portal stores only the information needed for academic management and uses secure browser behavior for profile and session handling."
+    },
+    {
+      "id": 16,
+      "category": "Technical",
+      "question": "How can I improve page performance while using the portal?",
+      "answer": "Use a recent browser version, avoid excessive tab usage, and refresh the page after changes. The portal is also optimized to load commonly used sections efficiently."
+    }
+  ]
+}

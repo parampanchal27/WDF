@@ -1,0 +1,76 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "code": "WDF-301",
+      "title": "Web Development Fundamentals",
+      "instructor": "Prof. A. Sharma",
+      "credits": 4,
+      "schedule": "Monday, Wednesday, Friday - 10:00 AM to 11:00 AM",
+      "location": "Room 301, Building A",
+      "description": "Covers HTML, CSS, JavaScript, and responsive design principles.",
+      "assessment": "Assignments 30%, Midterm 30%, Final Exam 40%",
+      "grade": "A- (85%)"
+    },
+    {
+      "id": 2,
+      "code": "DBMS-201",
+      "title": "Database Management Systems",
+      "instructor": "Prof. R. Patel",
+      "credits": 3,
+      "schedule": "Tuesday, Thursday - 2:00 PM to 3:30 PM",
+      "location": "Room 205, Building B",
+      "description": "Introduces relational databases, SQL, normalization, and data integrity concepts.",
+      "assessment": "Quizzes 20%, Project 30%, Final Exam 50%",
+      "grade": "B+ (82%)"
+    },
+    {
+      "id": 3,
+      "code": "OS-301",
+      "title": "Operating Systems",
+      "instructor": "Prof. M. Kumar",
+      "credits": 4,
+      "schedule": "Monday, Wednesday - 1:00 PM to 2:30 PM",
+      "location": "Lab 301, Building C",
+      "description": "Explains process management, memory allocation, file systems, and concurrency.",
+      "assessment": "Lab Work 25%, Midterm 25%, Final Exam 50%",
+      "grade": "A (88%)"
+    },
+    {
+      "id": 4,
+      "code": "DSA-201",
+      "title": "Data Structures and Algorithms",
+      "instructor": "Prof. S. Verma",
+      "credits": 4,
+      "schedule": "Tuesday, Thursday, Saturday - 10:00 AM to 11:00 AM",
+      "location": "Room 401, Building A",
+      "description": "Focuses on arrays, linked lists, stacks, queues, trees, and sorting algorithms.",
+      "assessment": "Programming Assignments 40%, Midterm 30%, Final Exam 30%",
+      "grade": "A (90%)"
+    },
+    {
+      "id": 5,
+      "code": "CN-301",
+      "title": "Computer Networks",
+      "instructor": "Prof. N. Singh",
+      "credits": 3,
+      "schedule": "Wednesday, Friday - 3:00 PM to 4:30 PM",
+      "location": "Room 102, Building D",
+      "description": "Covers networking fundamentals, OSI model, TCP/IP, and network protocols.",
+      "assessment": "Quizzes 20%, Project 25%, Final Exam 55%",
+      "grade": "B+ (83%)"
+    },
+    {
+      "id": 6,
+      "code": "SE-201",
+      "title": "Software Engineering",
+      "instructor": "Prof. J. Desai",
+      "credits": 3,
+      "schedule": "Monday, Thursday - 11:00 AM to 12:30 PM",
+      "location": "Room 501, Building B",
+      "description": "Introduces software development lifecycle, design patterns, and project management methodologies.",
+      "assessment": "Case Studies 20%, Group Project 30%, Final Exam 50%",
+      "grade": "A- (87%)"
+    }
+  ]
+}
