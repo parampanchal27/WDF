@@ -1,0 +1,24 @@
+[
+    {
+        "fullName": "Asha Patel",
+        "username": "asha2026",
+        "email": "asha@example.com",
+        "mobile": "9876543210",
+        "course": "btech-it",
+        "year": "3rd-semester",
+        "gender": "male",
+        "passwordHash": "$2y$10$lR5mTfkV3j8kerNwxU8FzeYAICSzXg2ceDEs3jQviWweRivCzcgJq",
+        "registeredAt": "2026-10-07 06:25:30"
+    },
+    {
+        "fullName": "param",
+        "username": "param123",
+        "email": "parampanchal975@gmail.com",
+        "mobile": "9408778555",
+        "course": "btech-cse",
+        "year": "3rd-semester",
+        "gender": "male",
+        "passwordHash": "$2y$10$O8KhDR6JFy4DEMKSnGEZXuUTIb8nlrheEESzLVKF165NgULWqLLuW",
+        "registeredAt": "2026-10-07 06:28:27"
+    }
+]

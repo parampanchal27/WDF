@@ -24,6 +24,66 @@ if (themeToggle) {
     });
 }
 
+function updateAuthenticationNavigation() {
+    const navigation = document.querySelector(".indexnav");
+    if (!navigation) {
+        return;
+    }
+
+    let faqLink = navigation.querySelector("a[data-faq-link], a[href$='faq.html']");
+    if (!faqLink) {
+        faqLink = document.createElement("a");
+        faqLink.href = "faq.html";
+        faqLink.textContent = "FAQ";
+        faqLink.dataset.faqLink = "true";
+        navigation.appendChild(faqLink);
+    }
+    faqLink.dataset.faqLink = "true";
+
+    let logoutLink = navigation.querySelector("a[data-logout-link], a[href*='logout.php']");
+    if (!logoutLink) {
+        logoutLink = document.createElement("a");
+        logoutLink.href = "practical7/logout.php";
+        logoutLink.textContent = "Logout";
+        logoutLink.dataset.logoutLink = "true";
+        navigation.appendChild(logoutLink);
+    }
+    logoutLink.dataset.logoutLink = "true";
+
+    fetch("practical7/session_status.php", { credentials: "same-origin" })
+        .then(function (response) {
+            if (!response.ok) {
+                throw new Error("Unable to check login status.");
+            }
+            return response.json();
+        })
+        .then(function (status) {
+            const welcomeHeading = document.getElementById("welcomeHeading");
+            if (welcomeHeading) {
+                if (status.authenticated && status.user && status.user.fullName) {
+                    welcomeHeading.textContent = "Welcome back, " + status.user.fullName;
+                } else {
+                    welcomeHeading.textContent = "Welcome to StudentHub";
+                }
+            }
+
+            const loginLink = Array.from(navigation.querySelectorAll("a")).find(function (link) {
+                return link.textContent.trim().toLowerCase() === "login";
+            });
+
+            if (loginLink) {
+                loginLink.hidden = status.authenticated;
+            }
+            logoutLink.hidden = !status.authenticated;
+        })
+        .catch(function (error) {
+            console.error(error);
+            logoutLink.hidden = true;
+        });
+}
+
+updateAuthenticationNavigation();
+
 const form = document.getElementById("registerForm");
 const successMessage = document.getElementById("successMessage");
 
@@ -111,12 +171,10 @@ if (form) {
         field.addEventListener("change", validateRegistration);
     });
     form.addEventListener("submit", function (event) {
-        event.preventDefault();
         if (validateRegistration()) {
-            successMessage.textContent = "Registration successful!";
-            form.reset();
-            updatePasswordStrength();
+            successMessage.textContent = "Submitting registration...";
         } else {
+            event.preventDefault();
             successMessage.textContent = "Please correct the highlighted fields.";
         }
     });
