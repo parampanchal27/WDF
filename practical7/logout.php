@@ -1,22 +1,15 @@
 <?php
-session_start();
-
-$_SESSION = [];
-
-if (ini_get('session.use_cookies')) {
-    $params = session_get_cookie_params();
-    setcookie(
-        session_name(),
-        '',
-        time() - 42000,
-        $params['path'],
-        $params['domain'],
-        $params['secure'],
-        $params['httponly']
-    );
+require __DIR__ . DIRECTORY_SEPARATOR . 'auth.php';
+startStudentHubSession();
+require_once __DIR__ . DIRECTORY_SEPARATOR . 'db_mysqli.php';
+if (!empty($_SESSION['user']['id'])) {
+    $statement = $mysqli->prepare('DELETE FROM remember_tokens WHERE student_id = ?');
+    $studentId = (int) $_SESSION['user']['id'];
+    $statement->bind_param('i', $studentId);
+    $statement->execute();
+    $statement->close();
 }
-
-session_destroy();
-
-header('Location: /Login.html?logged_out=1');
+expireStudentHubSession();
+setcookie('studenthub_remember', '', time() - 3600, '/');
+header('Location: ../Login.html?logged_out=1');
 exit;

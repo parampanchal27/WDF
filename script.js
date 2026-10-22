@@ -84,6 +84,29 @@ function updateAuthenticationNavigation() {
 
 updateAuthenticationNavigation();
 
+const loginForm = document.getElementById("loginForm");
+if (loginForm) {
+    const loginIdentifier = document.getElementById("email");
+    const loginPassword = document.getElementById("password");
+    const loginMessage = document.getElementById("loginMessage");
+    const query = new URLSearchParams(window.location.search);
+
+    if (query.has("registered")) loginMessage.textContent = "Registration successful. Please log in.";
+    if (query.has("logged_out")) loginMessage.textContent = "You have been logged out.";
+    if (query.has("timeout")) loginMessage.textContent = "Your session expired. Please log in again.";
+    if (query.has("required")) loginMessage.textContent = "Please log in to open the dashboard.";
+
+    loginForm.addEventListener("submit", function (event) {
+        const identifier = loginIdentifier.value.trim();
+        const validIdentifier = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(identifier)
+            || /^[A-Za-z0-9_.-]{3,30}$/.test(identifier);
+        if (!validIdentifier || loginPassword.value.length === 0) {
+            event.preventDefault();
+            loginMessage.textContent = "Enter a valid email/username and password.";
+        }
+    });
+}
+
 const form = document.getElementById("registerForm");
 const successMessage = document.getElementById("successMessage");
 

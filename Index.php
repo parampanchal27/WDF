@@ -1,3 +1,8 @@
+<?php
+require __DIR__ . DIRECTORY_SEPARATOR . 'practical7' . DIRECTORY_SEPARATOR . 'auth.php';
+startStudentHubSession();
+requireStudentHubLogin();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +17,7 @@
         <h1>StudentHub Portal</h1>
         <button id="themeToggle" class="theme-toggle" type="button" aria-label="Switch theme">🌙 Dark Mode</button>
         <nav class="indexnav" aria-label="Primary navigation">
-            <a href="index.html">Home</a> <a href="coursedetails.html">Courses</a> <a href="mycourses.html">My Courses</a> <a href="assignments.html">Assignments</a> <a href="grades.html">Grades</a> <a href="schedule.html">Schedule</a> <a href="announcement.html">Announcements</a> <a href="calendar.html">Calendar</a> <a href="profile.html">Profile</a> <a href="login.html">Login</a> <a href="practical8/events.php">Events</a> <a href="practical7/logout.php">Logout</a> <a href="coursedetails.html">Course Details</a>
+            <a href="Index.php">Home</a> <a href="coursedetails.html">Courses</a> <a href="mycourses.html">My Courses</a> <a href="assignments.html">Assignments</a> <a href="grades.html">Grades</a> <a href="schedule.html">Schedule</a> <a href="announcement.html">Announcements</a> <a href="calendar.html">Calendar</a> <a href="profile.html">Profile</a> <a href="practical8/events.php">Events</a><?php if (($_SESSION['user']['role'] ?? '') === 'admin'): ?> <a href="practical7/admin.php">Admin dashboard</a><?php endif; ?> <a href="practical7/logout.php">Logout</a>
         </nav>
     </header>
     <hr>

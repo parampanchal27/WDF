@@ -1,5 +1,8 @@
 <?php
-session_start();
+require __DIR__ . DIRECTORY_SEPARATOR . 'db_mysqli.php';
+require __DIR__ . DIRECTORY_SEPARATOR . 'auth.php';
+
+startStudentHubSession();
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
@@ -7,36 +10,61 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit('Invalid request method.');
 }
 
-$email = trim((string) ($_POST['email'] ?? ''));
+$identifier = strtolower(trim((string) ($_POST['email'] ?? '')));
 $password = (string) ($_POST['password'] ?? '');
-$filePath = __DIR__ . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'users.json';
 $user = null;
 
-if (filter_var($email, FILTER_VALIDATE_EMAIL) && is_readable($filePath)) {
-    $contents = file_get_contents($filePath);
-    $users = $contents === false ? null : json_decode($contents, true);
-    if (is_array($users)) {
-        foreach ($users as $candidate) {
-            if (($candidate['email'] ?? '') === $email && password_verify($password, $candidate['passwordHash'] ?? '')) {
-                $user = $candidate;
-                break;
-            }
-        }
+if ($identifier !== '' && $password !== '') {
+    $statement = $mysqli->prepare(
+        'SELECT student_id, full_name, username, email, role, password_hash
+         FROM students WHERE email = ? OR username = ? LIMIT 1'
+    );
+    $statement->bind_param('ss', $identifier, $identifier);
+    $statement->execute();
+    $result = $statement->get_result();
+    $candidate = $result->fetch_assoc();
+    $statement->close();
+    if ($candidate && password_verify($password, $candidate['password_hash'])) {
+        $user = $candidate;
     }
 }
 
 if ($user === null) {
     http_response_code(401);
-    echo '<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Login failed</title><link rel="stylesheet" href="/styles.css"></head><body><main><h1>Login failed</h1><p>Invalid email or password.</p><p><a href="/Login.html">Try again</a> | <a href="/register.html">Create an account</a></p></main></body></html>';
-    exit;
+    exit('<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Login failed</title><link rel="stylesheet" href="../styles.css"></head><body><main><h1>Login failed</h1><p>Invalid email/username or password.</p><p><a href="../Login.html">Try again</a> | <a href="../register.html">Create an account</a></p></main></body></html>');
 }
 
 session_regenerate_id(true);
 $_SESSION['user'] = [
-    'fullName' => $user['fullName'],
+    'id' => (int) $user['student_id'],
+    'fullName' => $user['full_name'],
     'username' => $user['username'],
     'email' => $user['email'],
+    'role' => $user['role'],
 ];
+$_SESSION['last_activity'] = time();
 
-header('Location: /Index.html');
+if (!empty($_POST['remember'])) {
+    $selector = bin2hex(random_bytes(9));
+    $validator = bin2hex(random_bytes(32));
+    $tokenHash = hash('sha256', $validator);
+    $expiresAt = date('Y-m-d H:i:s', time() + (60 * 60 * 24 * 30));
+    $tokenStatement = $mysqli->prepare(
+        'INSERT INTO remember_tokens (student_id, selector, token_hash, expires_at) VALUES (?, ?, ?, ?)'
+    );
+    $studentId = (int) $user['student_id'];
+    $tokenStatement->bind_param('isss', $studentId, $selector, $tokenHash, $expiresAt);
+    $tokenStatement->execute();
+    $tokenStatement->close();
+    setcookie('studenthub_remember', $selector . ':' . $validator, [
+        'expires' => time() + (60 * 60 * 24 * 30),
+        'path' => '/',
+        'secure' => !empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off',
+        'httponly' => true,
+        'samesite' => 'Lax',
+    ]);
+}
+
+$destination = $user['role'] === 'admin' ? 'admin.php' : '../Index.php';
+header('Location: ' . $destination);
 exit;

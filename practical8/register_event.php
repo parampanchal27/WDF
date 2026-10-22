@@ -1,5 +1,7 @@
 <?php
-session_start();
+require __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'practical7' . DIRECTORY_SEPARATOR . 'auth.php';
+startStudentHubSession();
+requireStudentHubLogin();
 require __DIR__ . DIRECTORY_SEPARATOR . 'db.php';
 
 $userEmail = $_SESSION['user']['email'] ?? '';
@@ -17,52 +19,10 @@ $studentStatement->execute(['email' => $userEmail]);
 $student = $studentStatement->fetch();
 
 if (!$student) {
-    $jsonPath = __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'practical7'
-        . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'users.json';
-    $jsonContents = is_readable($jsonPath) ? file_get_contents($jsonPath) : false;
-    $jsonUsers = $jsonContents === false ? null : json_decode($jsonContents, true);
-    $jsonUser = null;
-
-    if (is_array($jsonUsers)) {
-        foreach ($jsonUsers as $candidate) {
-            if (($candidate['email'] ?? '') === $userEmail) {
-                $jsonUser = $candidate;
-                break;
-            }
-        }
-    }
-
-    if (is_array($jsonUser)) {
-        try {
-            $linkStatement = $pdo->prepare(
-                'INSERT INTO students
-                    (full_name, username, email, mobile, course, semester, password_hash)
-                 VALUES
-                    (:full_name, :username, :email, :mobile, :course, :semester, :password_hash)'
-            );
-            $linkStatement->execute([
-                'full_name' => $jsonUser['fullName'],
-                'username' => $jsonUser['username'],
-                'email' => $jsonUser['email'],
-                'mobile' => $jsonUser['mobile'],
-                'course' => ($jsonUser['course'] ?? '') === 'btech-it'
-                    ? 'B.Tech Information Technology'
-                    : 'B.Tech Computer Science',
-                'semester' => ($jsonUser['year'] ?? '') === '3rd-semester' ? 3 : 4,
-                'password_hash' => $jsonUser['passwordHash'],
-            ]);
-            $student = ['student_id' => $pdo->lastInsertId()];
-        } catch (PDOException $exception) {
-            error_log('StudentHub JSON-to-MySQL account linking failed: ' . $exception->getMessage());
-        }
-    }
-
-    if (!$student) {
-        $_SESSION['event_message'] = 'Your StudentHub account could not be linked to the database.';
-        $_SESSION['event_message_type'] = 'error';
-        header('Location: events.php');
-        exit;
-    }
+    $_SESSION['event_message'] = 'Your StudentHub account could not be found in the database.';
+    $_SESSION['event_message_type'] = 'error';
+    header('Location: events.php');
+    exit;
 }
 
 try {

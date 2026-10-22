@@ -13,7 +13,22 @@ CREATE TABLE IF NOT EXISTS students (
     course VARCHAR(100) NOT NULL,
     semester TINYINT UNSIGNED NOT NULL,
     password_hash VARCHAR(255) NOT NULL,
+    role ENUM('student', 'admin') NOT NULL DEFAULT 'student',
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB;
+
+ALTER TABLE students ADD COLUMN IF NOT EXISTS role ENUM('student', 'admin') NOT NULL DEFAULT 'student';
+
+CREATE TABLE IF NOT EXISTS remember_tokens (
+    token_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    student_id INT UNSIGNED NOT NULL,
+    selector CHAR(18) NOT NULL UNIQUE,
+    token_hash CHAR(64) NOT NULL,
+    expires_at DATETIME NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT fk_remember_tokens_student
+        FOREIGN KEY (student_id) REFERENCES students(student_id)
+        ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB;
 
 CREATE TABLE IF NOT EXISTS events (
@@ -23,8 +38,11 @@ CREATE TABLE IF NOT EXISTS events (
     event_date DATETIME NOT NULL,
     location VARCHAR(150) NOT NULL,
     capacity INT UNSIGNED NOT NULL,
+    poster_path VARCHAR(255) NULL,
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB;
+
+ALTER TABLE events ADD COLUMN IF NOT EXISTS poster_path VARCHAR(255) NULL;
 
 CREATE TABLE IF NOT EXISTS registrations (
     registration_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -48,6 +66,8 @@ VALUES
     ('Asha Patel', 'asha2026', 'asha@example.com', '9876543210',
      'B.Tech Information Technology', 3, '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llCzUqkCqv0H8Q0N7lT6')
 ON DUPLICATE KEY UPDATE email = VALUES(email);
+
+UPDATE students SET role = 'admin' WHERE username = 'param2026';
 
 INSERT INTO events (title, description, event_date, location, capacity)
 SELECT 'Web Development Workshop', 'Hands-on HTML, CSS, JavaScript, and PHP workshop.', '2026-10-20 10:00:00', 'Computer Lab 1', 40

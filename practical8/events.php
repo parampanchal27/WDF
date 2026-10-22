@@ -1,5 +1,7 @@
 <?php
-session_start();
+require __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'practical7' . DIRECTORY_SEPARATOR . 'auth.php';
+startStudentHubSession();
+requireStudentHubLogin();
 require __DIR__ . DIRECTORY_SEPARATOR . 'db.php';
 
 $message = $_SESSION['event_message'] ?? '';
@@ -63,7 +65,7 @@ function escaped(string $value): string
                     <?php endforeach; ?>
                 </div>
             <?php endif; ?>
-            <p class="links"><a href="../Index.html">Back to StudentHub</a> <a href="my_registrations.php">My registrations</a> <a href="../practical7/logout.php">Logout</a></p>
+            <p class="links"><a href="../Index.php">Back to StudentHub</a> <a href="my_registrations.php">My registrations</a> <a href="../practical7/logout.php">Logout</a></p>
         </section>
     </main>
 </body>
